@@ -55,7 +55,7 @@ Matrix operator+(const Matrix& first, const Matrix& second) {
 
 std::ostream& operator<<(std::ostream& os, const Matrix& matrix) {
   for (int i = 0; i < matrix.get_rows(); ++i) {
-    for (int j = 0; j < matrix.get_rows(); ++j) {
+    for (int j = 0; j < matrix.get_cols(); ++j) {
       os << matrix[i][j] << " ";
     }
     os << std::endl;
