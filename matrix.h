@@ -7,6 +7,7 @@
 class Matrix {
  public:
   Matrix(int row, int col);
+  virtual ~Matrix();
 
   double *operator[](int i) const;
 

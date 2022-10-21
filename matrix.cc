@@ -13,6 +13,12 @@ Matrix::Matrix(int row, int col) : row_(0), col_(0), matrix_(nullptr) {
   matrix_ = new double[row * col]();
 }
 
+Matrix::~Matrix() {
+  row_ = 0;
+  col_ = 0;
+  delete matrix_;
+}
+
 double* Matrix::operator[](int i) const { return &(matrix_[i * col_]); }
 
 void Matrix::Rand() {
@@ -20,7 +26,7 @@ void Matrix::Rand() {
 
   for (int i = 0; i < row_; ++i) {
     for (int j = 0; j < col_; ++j) {
-      (*this)[i][j] = 0.01 * static_cast<double>((random() % 101));
+      (*this)[i][j] = 0.01 * static_cast<double>((std::rand() % 101));
     }
   }
 }
